@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +7,11 @@
     <title>Blog</title>
 </head>
 <body>
-    <h1> Blogs </h1>
+    
     <ul>
         {% block content %}
-        {% for blogs in blog_list %}
-        <li><a href ="{% url 'post_detail' post.pk %}">{{post.title}}</a></li>
+        {% for blog in blogs %}
+        <li><a href ="{% url 'post_details' post.pk %}">{{post.title}}</a></li>
         {% endfor %}
         {% endblock content%}
     </ul>
